@@ -1,0 +1,70 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    .dndCounterPart {
+        margin-top: 80px;
+        padding: 0 20px;
+
+        .dndCounterWindow {
+            background-color: rgb(255, 243, 219);
+            border-radius: 15px;
+            margin: auto;
+            max-width: 1200px;
+            min-height: 400px;
+            padding: 17px 20px;
+
+            >*:not(:last-child) {
+                margin-bottom: 20px;
+            }
+
+            .dndCounterActionsBlock {
+                display: flex;
+                flex-direction: column;
+
+                >*:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    background-color: white;
+                    max-width: 300px;
+                    height: 30px;
+                    padding: 5px 10px;
+                }
+
+                input {
+                    height: 30px;
+                    max-width: 300px;
+                    padding: 5px 10px;
+                    outline: none;
+                    border: 1px solid black;
+                }
+
+                button {
+                    background-color: white;
+                    width: 100px;
+                    padding: 10px 10px;
+                    border: 1px solid black;
+                    cursor: pointer;
+                    transition: all ease 0.2s;
+
+                    &:hover {
+                        background-color: #e7e7e7;
+                    }
+
+                    &:active {
+                        background-color: white;
+                    }
+                }
+            }
+
+            .dndCounterCharactersBlock {
+                >*:not(:last-child) {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}

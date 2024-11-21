@@ -1,0 +1,136 @@
+.characterBlock {
+    display: flex;
+    flex-direction: column;
+
+    .characterName {
+        font-size: 24px;
+        font-family: wonderbar;
+        padding-left: 15px;
+    }
+
+    > *:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    button {
+        user-select: none;
+        width: 70px;
+        padding: 5px;
+        cursor: pointer;
+        border: none;
+        background-color: white;
+
+        &:hover {
+            background-color: #e7e7e7;
+        }
+
+        &:active {
+            background-color: white;
+        }
+    }
+
+    .characterName {
+        background-color: white;
+    }
+
+    .characterSaturationBlock,
+    .characterStaminaBlock {
+        display: flex;
+
+        .characterSaturation,
+        .characterStamina {
+            outline: none;
+            border: none;
+
+            padding: 7px 10px;
+        }
+
+        .saturationBlockActions,
+        .staminaBlockActions {
+            display: flex;
+        }
+
+        @media (max-width: 844px) {
+            flex-direction: column;
+            > *:not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            .saturationBlockActions,
+            .staminaBlockActions {
+                flex-direction: column-reverse;
+                > *:not(:last-child) {
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        @media (min-width: 844px) {
+            flex-direction: row;
+            > *:not(:last-child) {
+                margin-right: 20px;
+            }
+
+            .saturationBlockActions,
+            .staminaBlockActions {
+                flex-direction: row;
+                > *:not(:last-child) {
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        p {
+            display: block;
+            position: relative;
+            width: 100px;
+            height: fit-content;
+            align-self: center;
+
+            @media (max-width: 844px) {
+                align-self: flex-start;
+                margin-left: 0px;
+            }
+
+            @media (min-width: 844px) {
+                margin-left: 40px;
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                transform: translate(0, -50%);
+                background-size: contain;
+
+                @media (max-width: 844px) {
+                    right: -5%;
+                }
+                @media (min-width: 844px) {
+                    left: -35%;
+                }
+
+                width: 25px;
+                height: 25px;
+            }
+
+            &.characterSaturationText::before {
+                background-image: url(../../assets/img/turkey_2268840.png);
+            }
+
+            &.characterStaminaText::before {
+                background-image: url(../../assets/img/lightning-512.webp);
+            }
+        }
+    }
+
+    .deleteButton {
+        width: 100px;
+        height: 35px;
+        @media (max-width: 844px) {
+            height: 40px;
+            width: 100%;
+        }
+    }
+}
